@@ -13,7 +13,7 @@ const Credits = (props) => {
       <br/>
       <Link to="/">Return to Home</Link>
     </div>
-  )
+  );
 }
 
 export default Credits;

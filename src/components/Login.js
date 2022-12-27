@@ -23,8 +23,8 @@ class LogIn extends Component {
 
   // When User Name input is changed, capture the new input value and update state
   handleChange = (e) => {
-    const updatedUser = {...this.state.user}  // Create an object for state
-    updatedUser.userName = e.target.value  // Set object's userName to the new input value
+    const updatedUser = {...this.state.user};  // Create an object for state
+    updatedUser.userName = e.target.value;  // Set object's userName to the new input value
     this.setState({user: updatedUser})  // Update state with object values
   }
 
@@ -38,7 +38,7 @@ class LogIn extends Component {
   render () {
     // Redirect to "User Profile" page when "Log In" button is clicked
     if (this.state.redirect) {  
-      return (<Redirect to="/userProfile"/>)
+      return (<Redirect to="/userProfile"/>);
     }
 
     // Render the login form (and call "handleSubmit" method when "Log In" button is clicked to submit form)
@@ -60,8 +60,8 @@ class LogIn extends Component {
         <br/>
         <Link to="/">Return to Home</Link>
       </div>
-    )
+    );
   }
 }
 
-export default LogIn
+export default LogIn;
