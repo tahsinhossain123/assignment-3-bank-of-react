@@ -1,7 +1,27 @@
 # bank-of-react-example-code-gh-pages
-This repository contains a React application example on how to implement client-side routing with React Router and its components including Route, Router Link, and Redirect.
+This repository is the starter code for Assignment 4 - Bank of React.
 
-### Use the following commands to run the application
+### Live Link 
+[Website link](https://johnnylaicode.github.io/bank-of-react-example-code-gh-pages/)
+
+----------
+### 1. Use the following process to ***import*** the Assignment 4 starter code repository to your GitHub account as your starter codebase
+1.	Log on to GitHub
+2.	Click on the + sign in the top right corner (next to the user icon)
+3.	In the dropdown menu, select "Import repository"
+4.	A new page will open
+5.	In "Your old repository’s clone URL" field, enter: `https://github.com/johnnylaicode/bank-of-react-example-code-gh-pages`
+6.	In "Your new repository details" field, enter your own repository name (e.g., "assignment-4")
+7.	Click on the "Begin import" button to start the process
+8.	After the process completed, your new "assignment-4" repository is created – as a completely independent codebase
+9.	From this point on, you can clone your new repository, make changes, create feature branches, and create/merge pull requests
+
+----------
+### 2. Use the information below to ***clone*** the starter codebase to your local machine
+After creating the starter codebase "assignment-4" repository on GitHub (see above), you can clone it to your local machine. The instructions on how to clone a GitHub repository are available at this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+----------
+### 3. Use the following commands to run the application
 
 - First, run this command to install dependencies:
 ```npm install```
@@ -12,11 +32,8 @@ Note: This application uses React Router version 5 and should be compatible with
 If you encounter problems with a later version of React Router, you can specifically install React Router version 5 using the following command:
 ```npm install react-router-dom@5.3.0 react-router@5.2.1```
 
-### Live Link 
-[Website link](https://johnnylaicode.github.io/bank-of-react-example-code-gh-pages/)
-
 ----------
-### Use the following steps to set up and deploy a React application to GitHub Pages
+### 4. Set up and deploy a React application to GitHub Pages
 #### 1. Create a React Application
 1. If you don't already have an existing React application on your local machine, you can create a new React application (e.g., "my-react-app").
 
