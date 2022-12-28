@@ -20,7 +20,7 @@ If you encounter problems with a later version of React Router, you can specific
 #### 1. Create a React Application
 1. If you don't already have an existing React application on your local machine, you can create a new React application (e.g., "my-react-app").
 
-  Optionally, you can clone the "bank-of-react-example-code-gh-pages" repository to your local machine and re-name it "my-react-app."
+    Optionally, you can clone the "bank-of-react-example-code-gh-pages" repository to your local machine and re-name it "my-react-app."
 2. Start a terminal (e.g., Git Bash) on your local machine.
 3. Go into the "my-react-app" folder.
 4. All the following steps are performed inside the "my-react-app" folder. 
