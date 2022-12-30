@@ -39,7 +39,7 @@ If you encounter problems with a later version of React Router, you can specific
 
     Optionally, you can clone the "bank-of-react-example-code-gh-pages" repository to your local machine and re-name it "my-react-app."
 2. Start a terminal (e.g., Git Bash) on your local machine.
-3. Go into the "my-react-app" folder.
+3. Go to the "my-react-app" folder.
 4. All the following steps are performed inside the "my-react-app" folder. 
 
 #### 2. Add "basename" to Router Tag in "App.js" File
