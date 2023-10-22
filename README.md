@@ -28,6 +28,8 @@ After creating the starter codebase "assignment-3" repository on GitHub (see abo
 - Next, run this command to start the React application:
 ```npm start```
 
+**Note: This application uses React Router version 5 and should be compatible with later versions of React Router. If you encounter problems with a later version of React Router, you can specifically install React Router version 5 using the following command: ```npm install react-router-dom@5.3.0 react-router@5.2.1```**
+
 ----------
 ### 4. Set up and deploy a React application to GitHub Pages
 #### 1. Create a React Application
