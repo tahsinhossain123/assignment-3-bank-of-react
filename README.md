@@ -21,7 +21,7 @@ This repository is the starter code for Assignment 3 - Bank of React.
 After creating the starter codebase "assignment-3" repository on GitHub (see above), you can clone it to your local machine. The instructions on how to clone a GitHub repository are available at this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 ----------
-### 3. Use the following commands to run the application
+### 3. Use the following commands to install dependencies and run the application
 
 - First, run this command to install dependencies:
 ```npm install```
