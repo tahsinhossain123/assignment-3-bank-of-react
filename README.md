@@ -76,3 +76,25 @@ After creating the starter codebase "assignment-3" repository on GitHub (see abo
 #### 7. Deploy React Application to GitHub Pages
 1. Deploy the "my-react-app" application to GitHub Pages by entering the following command in the terminal: `npm run deploy`
 2. Open a web browser, go to the following address to see your React application on GitHub Pages: `https://[your GitHub username].github.io/my-react-app/` 
+
+<br/>
+
+## Common Errors You May Encounter
+### Error: ERR_OSSL_EVP_UNSUPPORTED
+This error indicates that your application uses an algorithm or key size not supported by OpenSSL 3.0.
+#### Solution: 
+1. If you use *Windows*, in the `package.json` file, set the "scripts" attributes as follows:
+
+```
+  "scripts": {
+  "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start", 
+  "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build", 
+  ...
+    },
+```
+
+2. If you use *Mac OSX or Linux*, include the following command in the `~/.bash_profile` or `~/.bashrc` file.
+
+```
+  export NODE_OPTIONS=--openssl-legacy-provider
+```
