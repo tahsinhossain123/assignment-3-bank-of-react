@@ -23,12 +23,15 @@ After creating the starter codebase "assignment-3" repository on GitHub (see abo
 ----------
 ### 3. Use the following commands to install dependencies and run the application
 
-- First, run this command to install dependencies:
-```npm install```
-- Next, run this command to start the React application:
-```npm start```
+- First, run this command to install dependencies: ```npm install```
+- Next, run this command to start the React application: ```npm start```
 
-**Note: This application uses React Router version 5 and should be compatible with later versions of React Router. If you encounter problems with a later version of React Router, you can specifically install React Router version 5 using the following command: ```npm install react-router-dom@5.3.0 react-router@5.2.1``` Afterward, you can run the ```npm start``` command to start the React application.**
+**Note: This application uses React Router version 5 and should be compatible with later versions of React Router. If you encounter problems with a later version of React Router, you can specifically install React Router version 5 using the following commands:** 
+```
+npm install react-router-dom@5.3.0 react-router@5.2.1
+npm install react-scripts@latest --legacy-peer-deps 
+``` 
+**Afterward, you can run the ```npm start``` command to start the React application.**
 
 ----------
 ### 4. Set up and deploy a React application to GitHub Pages
@@ -98,3 +101,16 @@ This error indicates that your application uses an algorithm or key size not sup
 ```
   export NODE_OPTIONS=--openssl-legacy-provider
 ```
+
+### Error: React Router Compatibility Issues When Running "npm start" Command
+You may encounter React Router compatibility issues when running the `npm start` command because this application uses React Router version 5. 
+#### Solution: 
+Install React Router version 5 and run the application using the following commands in the specified order: 
+
+```
+  npm install
+  npm install react-router-dom@5.3.0 react-router@5.2.1 
+  npm install react-scripts@latest --legacy-peer-deps 
+  npm start
+```
+
