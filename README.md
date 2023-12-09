@@ -86,12 +86,12 @@ npm install react-scripts@latest --legacy-peer-deps
 ### Error: ERR_OSSL_EVP_UNSUPPORTED
 This error indicates that your application uses an algorithm or key size not supported by OpenSSL 3.0.
 #### Solution: 
-1. If you use *Windows*, in the `package.json` file, set the "scripts" attributes as follows:
+1. If you use *Windows or Linux*, in the `package.json` file, set the "scripts" attributes as follows:
 
 ```
   "scripts": {
-  "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start", 
-  "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build", 
+  "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start", 
+  "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build", 
   ...
     },
 ```
