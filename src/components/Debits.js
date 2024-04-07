@@ -30,6 +30,7 @@ const Debits = (props) => {
     }
   };
 
+  
   // Rendering the list items one by one using the debit array
   const debitsView = () => {
     return props.debits.map(debit => (
