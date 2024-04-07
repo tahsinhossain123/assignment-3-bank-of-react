@@ -28,12 +28,48 @@ class App extends Component {
     };
   }
 
+  // Checking for mounting to fetch data
+  componentDidMount() {
+    this.fetchCredits();
+    this.fetchDebits();
+  }
+
+  // Fetching credits from json files
+  fetchCredits = () => {
+    fetch('https://johnnylaicode.github.io/api/credits.json')
+      .then(response => response.json())
+      .then(data => this.setState({ creditList: data }));
+  }
+
+  // Fetching debits from json files
+  fetchDebits = () => {
+    fetch('https://johnnylaicode.github.io/api/debits.json')
+      .then(response => response.json())
+      .then(data => this.setState({ debitList: data }));
+  }
+
+
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
     newUser.userName = logInInfo.userName;
     this.setState({currentUser: newUser})
   }
+
+  // Adding a credit item
+  addCredit = (newCredit) => {
+    this.setState(prevState => ({
+      creditList: [...prevState.creditList, newCredit]
+    }));
+  }
+
+  // Adding a debit item
+  addDebit = (newDebit) => {
+    this.setState(prevState => ({
+      debitList: [...prevState.debitList, newDebit]
+    }));
+  }
+
 
   // Create Routes and React elements to be rendered using React components
   render() {  
@@ -43,8 +79,8 @@ class App extends Component {
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
     )
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits credits={this.state.creditList} />) 
-    const DebitsComponent = () => (<Debits debits={this.state.debitList} />) 
+    const CreditsComponent = () => (<div style={{ align: 'left', padding: '0' , textAlign: 'left'}}> <Credits credits={this.state.creditList} addCredit={this.addCredit} /> </div>) 
+    const DebitsComponent = () => (<div style={{ align: 'left', padding: '0' , textAlign: 'left'}}> <Debits debits={this.state.debitList} addDebit={this.addDebit} /> </div>) 
 
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
     return (
