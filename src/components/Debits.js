@@ -6,6 +6,8 @@ Note: You need to work on this file for the Assignment.
 ==================================================*/
 import {Link} from 'react-router-dom';
 
+import AccountBalance from './AccountBalance';
+
 const Debits = (props) => {
   // Function to execute when the submit button is clicked to handle the entered data
   const submitData = (e) => {
@@ -53,6 +55,10 @@ const Debits = (props) => {
         <button type="submit">Add Debit</button>
       </form>
       
+      <br/>
+      {/* Account Balance Display */}
+      <AccountBalance accountBalance={props.accountBalance} />
+         
       <br/>
       <Link to="/">Return to Home</Link>
     </div>
