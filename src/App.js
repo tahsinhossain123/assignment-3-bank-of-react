@@ -38,14 +38,19 @@ class App extends Component {
   fetchCredits = () => {
     fetch('https://johnnylaicode.github.io/api/credits.json')
       .then(response => response.json())
-      .then(data => this.setState({ creditList: data }));
+      .then(data => {
+        this.setState({ creditList: data }, this.newAccountBalance);
+      });  //updates the account balance, updates creditList component's State and call back function to setState()
+    
   }
 
   // Fetching debits from json files
   fetchDebits = () => {
     fetch('https://johnnylaicode.github.io/api/debits.json')
       .then(response => response.json())
-      .then(data => this.setState({ debitList: data }));
+      .then(data => {
+        this.setState({ debitList: data }, this.newAccountBalance);
+      });
   }
 
 
@@ -60,14 +65,27 @@ class App extends Component {
   addCredit = (newCredit) => {
     this.setState(prevState => ({
       creditList: [...prevState.creditList, newCredit]
-    }));
+    }), this.newAccountBalance); // updates account balance after adding credit
+    //newAccountBalance defined below is a method of the App class 
   }
 
   // Adding a debit item
   addDebit = (newDebit) => {
     this.setState(prevState => ({
       debitList: [...prevState.debitList, newDebit]
-    }));
+    }), this.newAccountBalance); // updates account balance  after adding debit
+  }
+
+  // newAccountBalance method 
+  newAccountBalance = () => {
+    //Calculates Total Credits
+    const totalCredits = this.state.creditList.reduce((acc, credit) => acc + credit.amount, 0);
+    //Calculates Total Debits
+    const totalDebits = this.state.debitList.reduce((acc, debit) => acc + debit.amount, 0);
+    //Computes newBalance totalCredits - totalDebits
+    const newBalance = totalCredits - totalDebits;
+    //updates the component's state
+    this.setState({ accountBalance: parseFloat(newBalance.toFixed(2)) }); // Update state with new balance, rounded to 2 decimal places
   }
 
 
@@ -79,8 +97,28 @@ class App extends Component {
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
     )
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<div style={{ align: 'left', padding: '0' , textAlign: 'left'}}> <Credits credits={this.state.creditList} addCredit={this.addCredit} /> </div>) 
-    const DebitsComponent = () => (<div style={{ align: 'left', padding: '0' , textAlign: 'left'}}> <Debits debits={this.state.debitList} addDebit={this.addDebit} /> </div>) 
+
+    const CreditsComponent = () => (
+      <div style={{ align: 'left', padding: '0', textAlign: 'left' }}> 
+        <Credits 
+          credits={this.state.creditList} 
+          addCredit={this.addCredit} 
+          // gives the CreditsComponent access to the accountBalance prop (properties) value from its parent component's state.
+          accountBalance={this.state.accountBalance} 
+        />
+      </div>
+    );
+
+
+    const DebitsComponent = () => (
+      <div style={{ align: 'left', padding: '0' , textAlign: 'left'}}> 
+        <Debits 
+          debits={this.state.debitList} 
+          addDebit={this.addDebit} 
+          accountBalance={this.state.accountBalance}          
+        /> 
+      </div>
+      );
 
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
     return (
